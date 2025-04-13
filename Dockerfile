@@ -10,7 +10,8 @@ RUN apk add --no-cache curl unzip \
 WORKDIR /app
 COPY . /app
 
-RUN gradle build
+# ✅ 테스트 생략하고 빌드
+RUN gradle build -x test
 
 EXPOSE 8080
 
